@@ -1,0 +1,15 @@
+{
+    "short_name": "FullStack Template",
+    "name": "FullStack Template",
+    "icons": [
+        {
+            "src": "images/logo.png",
+            "type": "image/png",
+            "sizes": "250x250"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "background_color": "#000000"
+}
