@@ -1,0 +1,9 @@
+{
+    "diff": true,
+    "extension": ["js"],
+    "package": "./package.json",
+    "timeout": 50000,
+    "recursive": true,
+    "bail": true,
+    "exit": true
+}
