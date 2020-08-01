@@ -40,21 +40,21 @@ const PACKAGE_NAME = `@${GITHUB_REPOSITORY.toLowerCase()}`;
 rootPackage.name = PACKAGE_NAME;
 rootPackage.homepage = rootPackage.homepage.replace(TEMPLATE_GITHUB_REPOSITORY, GITHUB_REPOSITORY);
 rootPackage.author = rootPackage.author.replace(TEMPLATE_AUTHOR, GITHUB_ACTOR);
-writeFileSync('./package.json', JSON.stringify(rootPackage, null, 4), { encoding: 'utf8' });
+writeFileSync('./package.json', `${JSON.stringify(rootPackage, null, 4)}\n`, { encoding: 'utf8' });
 
 /**
  * client/package.json
  */
 
 clientPackage.name = clientPackage.name.replace(TEMPLATE_REPO_NAME, PACKAGE_NAME);
-writeFileSync('./client/package.json', JSON.stringify(clientPackage, null, 4), { encoding: 'utf8' });
+writeFileSync('./client/package.json', `${JSON.stringify(clientPackage, null, 4)}\n`, { encoding: 'utf8' });
 
 /**
  * server/package.json
  */
 
 serverPackage.name = serverPackage.name.replace(TEMPLATE_REPO_NAME, PACKAGE_NAME);
-writeFileSync('./server/package.json', JSON.stringify(serverPackage, null, 4), { encoding: 'utf8' });
+writeFileSync('./server/package.json', `${JSON.stringify(serverPackage, null, 4)}\n`, { encoding: 'utf8' });
 
 /**
  * README.md
