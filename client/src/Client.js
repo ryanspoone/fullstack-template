@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 import fetch from 'isomorphic-fetch';
 
-const LOCAL_STORAGE_KEY = 'is2-fake-auth';
+const LOCAL_STORAGE_KEY = 'fake-auth-key';
 
 // There are risks with using localStorage for API tokens in a production
 // application. You open yourself up to XSS attacks. If malicious

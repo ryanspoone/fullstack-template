@@ -1,9 +1,7 @@
-/**
- * @file
- */
-
 import express from 'express';
 import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 app.set('port', 1050);
@@ -18,11 +16,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/', (req, res) => {
+const indexRouter = express.Router();
+indexRouter.get('/', (req, res) => {
     res.send('FullStack Template');
-});
-app.get('/api', function(req, res) {
-    res.send('FullStack Template API is running');
 });
 
 // A fake API token our server validates
@@ -50,7 +46,7 @@ const authenticatedRoute = (req, res, next) => {
     }
 };
 
-app.get('/api/check_token', (req, res) => {
+indexRouter.get('/check_token', (req, res) => {
     const token = extractToken(req);
 
     if (token) {
@@ -70,7 +66,7 @@ app.get('/api/check_token', (req, res) => {
 // Make things more noticeable in the UI by introducing a fake delay
 // to logins
 const FAKE_DELAY = 500; // ms
-app.post('/api/login', (req, res) => {
+indexRouter.post('/login', (req, res) => {
     setTimeout(
         () =>
             res.json({
@@ -84,7 +80,9 @@ app.post('/api/login', (req, res) => {
 import unprotectedRoutes from './routes/unprotected';
 import protectedRoutes from './routes/protected';
 
-app.use('/api/unprotected', unprotectedRoutes);
-app.use('/api/protected', authenticatedRoute, protectedRoutes);
+indexRouter.use('/unprotected', unprotectedRoutes);
+indexRouter.use('/protected', authenticatedRoute, protectedRoutes);
+
+app.use(process.env.SERVER_ROUTE, indexRouter);
 
 export default app;
