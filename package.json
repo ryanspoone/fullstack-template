@@ -3,13 +3,14 @@
     "version": "1.0.0",
     "description": "",
     "main": "server/index.js",
+    "homepage": "https://github.com/ryanspoone/fullstack-template.git",
     "scripts": {
         "lint": "eslint .",
         "format": "eslint . --fix",
         "server": "babel-node server/start.js",
         "client": "babel-node client/start.js",
         "start": "concurrently \"npm run server\" \"npm run client\"",
-        "install-all": "npm install && npm run install-server && npm install build-client",
+        "install-all": "npm install && npm run install-server && npm run install-client",
         "install-server": "cd server && npm install",
         "install-client": "cd client && npm install && npm run build"
     },
@@ -36,7 +37,7 @@
         "esm": "^3.2.25"
     },
     "devDependencies": {
-        "babel-eslint": "10.0.3",
+        "babel-eslint": "10.1.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.10.0",
         "eslint-plugin-flowtype": "^4.6.0",
