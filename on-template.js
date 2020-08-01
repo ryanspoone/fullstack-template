@@ -16,20 +16,16 @@ const GITHUB_REPO_NAME = _(GITHUB_REPOSITORY)
     .split('/')
     .last();
 
-// Testing
-console.log('GITHUB_REPOSITORY', GITHUB_REPOSITORY);
-console.log('TEMPLATE_GITHUB_REPOSITORY', TEMPLATE_GITHUB_REPOSITORY);
-console.log('SAME_REPO', GITHUB_REPOSITORY === TEMPLATE_GITHUB_REPOSITORY);
-process.exit();
-
 if (GITHUB_REPOSITORY === TEMPLATE_GITHUB_REPOSITORY) {
     // eslint-disable-next-line no-console
-    console.error(`Not running inside ${TEMPLATE_GITHUB_REPOSITORY} repo.`);
+    console.log(`Not running inside ${TEMPLATE_GITHUB_REPOSITORY} repo.`);
     process.exit();
 }
 
 if (!GITHUB_REPOSITORY) {
-    throw new Error('Unknown GITHUB_REPOSITORY.');
+    // eslint-disable-next-line no-console
+    console.error('Unknown GITHUB_REPOSITORY.');
+    process.exit(1);
 }
 
 // eslint-disable-next-line no-console
