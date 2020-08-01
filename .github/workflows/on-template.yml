@@ -14,7 +14,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 12
-            - run: npm install
+            - run: npm run install-all
             - name: Replace
               run: node --experimental-json-modules --experimental-modules ./on-template.js
             - name: push
