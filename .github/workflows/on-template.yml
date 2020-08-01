@@ -16,7 +16,7 @@ jobs:
                   node-version: 12
             - run: npm install
             - name: Replace
-              run: node --experimental-modules ./on-template.js
+              run: node --experimental-json-modules --experimental-modules ./on-template.js
             - name: push
               uses: github-actions-x/commit@v2.1
               with:
