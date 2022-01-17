@@ -35,7 +35,7 @@
         "babel-preset-stage-0": "^6.24.1",
         "build-client": "^1.0.12",
         "concurrently": "^6.2.0",
-        "dotenv": "^10.0.0",
+        "dotenv": "^14.1.0",
         "esm": "^3.2.25"
     },
     "devDependencies": {
