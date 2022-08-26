@@ -48,6 +48,6 @@
         "eslint-plugin-react": "^7.18.3",
         "mocha": "^9.0.1",
         "prettier": "^1.19.1",
-        "prettier-eslint-cli": "^5.0.0"
+        "prettier-eslint-cli": "^7.1.0"
     }
 }
